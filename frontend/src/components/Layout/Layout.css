@@ -1,0 +1,19 @@
+.Layout-container {
+  background: #000000;
+  background: -moz-linear-gradient(top, #000000 0%, #004669 55%, #00aaff 100%);
+  background: -webkit-linear-gradient(
+    top,
+    #000000 0%,
+    #004669 55%,
+    #00aaff 100%
+  );
+  background: linear-gradient(to bottom, #000000 0%, #004669 55%, #00aaff 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.Layout-content {
+  padding: 20px;
+}

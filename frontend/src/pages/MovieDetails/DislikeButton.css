@@ -1,0 +1,39 @@
+.dislike-button {
+  display: inline-block;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.dislike-button .fa-thumbs-down {
+  display: inline-block;
+  font-size: 24px;
+  color: #ccc;
+  transition: color 0.3s, transform 0.3s;
+  background-clip: content-box;
+}
+
+.dislike-button:hover .fa-thumbs-down {
+  color: #ff4d4d;
+  background-color: transparent;
+}
+
+.dislike-button.disliked .fa-thumbs-down {
+  color: #ff4d4d;
+  background-color: transparent;
+}
+
+.dislike-button.pulse .fa-thumbs-down {
+  animation: pulseAnimation 0.5s infinite;
+}
+
+@keyframes pulseAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,65 @@
+// Importer le module sqlite3
+const sqlite3 = require('sqlite3').verbose();
+
+// Ouvrir une connexion à la base de données SQLite3
+const db = new sqlite3.Database('database.sqlite3'); // Utilisez le nom de votre fichier de base de données
+
+// Fonction pour créer une table
+const createTable = () => {
+  db.run(`
+    CREATE TABLE IF NOT EXISTS personnes (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      nom TEXT,
+      age INTEGER
+    )
+  `, (err) => {
+    if (err) {
+      return console.error('Erreur de création de la table : ' + err.message);
+    }
+    console.log('Table créée ou déjà existante.');
+  });
+};
+
+// Données à insérer
+const data = [
+  { titre: 'Jean', date_de_sortie: 30 },
+  { titre: 'Marie', date_de_sortie: 25 },
+  { titre: 'Paul', date_de_sortie: 40 },
+];
+
+// Fonction pour insérer des données
+const populateDatabase = (callback) => {
+  const stmt = db.prepare('INSERT INTO movies (titre, date_de_sortie) VALUES (?, ?)');
+  data.forEach((movie, index) => {
+    stmt.run(movie.titre, movie.date_de_sortie, (err) => {
+      if (err) {
+        return console.error('Erreur d\'insertion : ' + err.message);
+      }
+      console.log('Données insérées pour : ' + movie.titre);
+      // Appeler la fonction callback après la dernière insertion
+      if (index === data.length - 1) {
+        callback();
+      }
+    });
+  });
+  stmt.finalize();
+};
+
+// Fonction de contrôle après la sauvegarde
+const controlSave = () => {
+  console.log('Toutes les données ont été insérées avec succès.');
+};
+
+// Exécuter les fonctions
+db.serialize(() => {
+  createTable();
+  populateDatabase(controlSave);
+});
+
+// Fermer la connexion
+db.close((err) => {
+  if (err) {
+    return console.error('Erreur lors de la fermeture de la connexion : ' + err.message);
+  }
+  console.log('Connexion fermée.');
+});

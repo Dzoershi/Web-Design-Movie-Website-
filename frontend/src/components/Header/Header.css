@@ -1,0 +1,104 @@
+.header {
+  background: linear-gradient(to right, #000000 0%, #0087ca 50%, #000000 100%);
+  padding: 2rem 2.5rem;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 8px; /* Optional: adds some rounding to the header edges */
+}
+
+.headerLeft,
+.headerRight {
+  display: flex;
+  align-items: center;
+}
+
+a > span {
+  margin: 0 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #00aaff; /* Light blue color for text */
+  padding: 10px 20px;
+  border: 2px solid white;
+  border-radius: 25px;
+  background-color: white;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+a > span:hover {
+  background-color: #00aaff;
+  color: white;
+  border-color: #00aaff;
+  transform: translateY(-2px);
+}
+
+.header__icon {
+  width: 100px;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+.user__avatar {
+  font-size: 2rem;
+}
+
+.headerRight {
+  position: relative;
+  margin-left: 10px; /* Adjust this value as needed */
+}
+
+.headerRight form {
+  position: relative;
+}
+
+.headerRight input[type='text'] {
+  padding: 8px 20px 8px 30px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-size: 14px;
+  width: 200px;
+  background-color: #f5f5f5;
+  transition: width 0.4s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.headerRight input[type='text']::placeholder {
+  color: #aaa;
+  transition: color 0.3s ease;
+}
+
+.headerRight input[type='text']:focus {
+  width: 300px;
+  box-shadow: 0 0 5px #00aaff;
+  background-color: #fff;
+}
+
+.headerRight input[type='text']:focus::placeholder {
+  color: #00aaff;
+}
+
+.search-icon {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  transition: color 0.3s ease;
+}
+
+.headerRight input[type='text']:focus + .search-icon {
+  color: #00aaff;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

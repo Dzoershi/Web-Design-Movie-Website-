@@ -1,0 +1,82 @@
+.about {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(to bottom, #000000 0%, #004669 55%, #00aaff 100%);
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.about h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.about-section {
+  margin-bottom: 2rem;
+}
+
+.about-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.about-section ul {
+  list-style-type: disc;
+  margin: 0;
+  padding: 0;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.about-section li {
+  margin-bottom: 0.5rem;
+}
+
+.team-member {
+  display: inline-block;
+  width: 200px;
+  margin: 1rem;
+  text-align: center;
+}
+
+.team-member-img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.team-member h3 {
+  margin: 0.5rem 0 0.2rem 0;
+  font-size: 1.2rem;
+}
+
+.team-member p {
+  margin: 0;
+  font-size: 1rem;
+  color: #777;
+}
+
+.about-section a {
+  color: #00aaff;
+  text-decoration: none;
+}
+
+.about-section a:hover {
+  text-decoration: underline;
+}
